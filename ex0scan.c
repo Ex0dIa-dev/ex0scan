@@ -1,3 +1,8 @@
+/*
+   02/05/2020 - Ex0dIa-dev - lucafranze3012@gmail.com
+   ex0scan is a basic portscanner written in C 
+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -41,7 +46,7 @@ int main(int argc, char const *argv[]) {
 
     memset(&addr, 0, sizeof (addr));
 
-    //socket struct
+    //socket struct 
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = inet_addr(argv[1]);
     addr.sin_port = htons(port);
@@ -56,6 +61,7 @@ int main(int argc, char const *argv[]) {
   } // for
   close(sd);
 
+  // elapsed time from start
   time(&end);
   elapsed = difftime(end, start);
   printf("Elapsed seconds: %.2f\n", elapsed);
